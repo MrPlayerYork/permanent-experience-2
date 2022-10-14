@@ -1,0 +1,6 @@
+{
+    "editor.fontFamily": "Minecraft",
+    "editor.fontSize": 18,    
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active"
+}

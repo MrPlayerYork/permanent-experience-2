@@ -1,0 +1,39 @@
+{
+	// Place your permanent-experience-2 workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Scoreboard Operation": {
+		"prefix": "op",
+		"body": [
+			"scoreboard players operation @s $0",
+		],
+		"description": "sets up player ops"
+	},
+	"Execute If":{
+		"prefix": "if",
+		"body": [
+			"execute if score @s $0",
+		]
+	},
+	"Initial Score":{
+		"prefix": "init",
+		"body": [
+			"execute unless score ${1:selector} ${2:objective} = ${1:selector} ${2:objective} run scoreboard players set ${1:selector} ${2:objective} ${3:0}",
+			"$0"
+		]
+	},
+	"Double Math":{
+		"prefix": "math",
+		"body": [
+			"execute store result storage num:io input[0] double ${1|0.1,0.01,0.001,0.0001|} run scoreboard players get ${2:@s} ${3:float}",
+			"execute store result storage num:io input[1] double ${4|0.1,0.01,0.001,0.0001|} run scoreboard players get ${5:@s} ${6:float}",
+			"function num:${7|add,sub,mul,div,cos,inv,invsqrt,scale,sin,sqrt,tan,unit|}",
+			"execute store result score ${8:@s} ${9:scale} run data get storage num:io output ${10|10000,1000,100,10,1|}",
+			"$0"
+		]
+	}
+}
